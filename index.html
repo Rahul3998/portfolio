@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rahul Adagale | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#home" class="logo">RAHUL ADAGALE</a>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container hero-inner" data-aos="fade-up">
+      <h1>Hi, I'm <span class="highlight">Rahul</span> 👋</h1>
+      <p>Collaborative and innovative <strong>Software Developer</strong> specializing in Java, Python, and full-stack development.</p>
+      <p><a class="btn" href="#projects">View My Work</a></p>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+  <div class="container">
+    <h2>About Me</h2>
+    <p class="about-text">
+      Collaborative and innovative software developer with a strong background in computer science 
+      and expertise in Java and Python. Proficient in algorithms, data structures, and SDLC with a 
+      focus on coding and debugging. Enthusiastic team player dedicated to delivering impactful 
+      software solutions and improving user experiences.
+    </p>
+
+    <h2>Skills</h2>
+    <div class="skills" id="skills">
+      <div class="skill-category">
+        <strong>Languages:</strong>
+        <span class="badge">Java</span>
+        <span class="badge">Python</span>
+        <span class="badge">JavaScript</span>
+        <span class="badge">C#</span>
+      </div>
+
+      <div class="skill-category">
+        <strong>Frameworks:</strong>
+        <span class="badge">Django</span>
+        <span class="badge">Spring Boot</span>
+        <span class="badge">React</span>
+        <span class="badge">.NET Core</span>
+      </div>
+
+      <div class="skill-category">
+        <strong>Databases:</strong>
+        <span class="badge">MySQL</span>
+        <span class="badge">SQLite</span>
+        <span class="badge">PostgreSQL</span>
+      </div>
+
+      <div class="skill-category">
+        <strong>Web & Mobile:</strong>
+        <span class="badge">HTML</span>
+        <span class="badge">CSS</span>
+        <span class="badge">React Native</span>
+      </div>
+
+      <div class="skill-category">
+        <strong>Tools:</strong>
+        <span class="badge">Git</span>
+        <span class="badge">GitHub</span>
+        <span class="badge">GitLab</span>
+        <span class="badge">Postman</span>
+        <span class="badge">Pandas</span>
+        <span class="badge">NumPy</span>
+        <span class="badge">Regex</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="experience" class="section container" data-aos="fade-left">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item" data-aos="zoom-in">
+        <h3>Software Engineer</h3>
+        <span>Fidel Softech Pvt. Ltd. | Jan 2024 – Present</span>
+        <p>Worked on localization engineering, i18n automation with Python & regex, full-stack development with Java, Django, React Native, and REST API integration.</p>
+      </div>
+      <div class="timeline-item" data-aos="zoom-in" data-aos-delay="200">
+        <h3>Java Developer Intern</h3>
+        <span>Fidel Softech Pvt. Ltd. | Jul 2023 – Dec 2023</span>
+        <p>Developed Java tools, REST APIs with Django, and backend modules. Focused on OOP, JDBC, and regex-based automation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section container">
+    <h2 data-aos="fade-up">Projects</h2>
+    <div class="grid-3">
+      <div class="card" data-aos="flip-left">
+        <h3>💬 Real-Time Chat Application</h3>
+        <p>Developed a Java-based chat app using Sockets and Multithreading. Handles multiple clients with real-time messaging.</p>
+        <p><strong>Tech:</strong> Java, OOP, Sockets, Multithreading</p>
+      </div>
+      <div class="card" data-aos="flip-left" data-aos-delay="200">
+        <h3>📝 Django Blog Platform</h3>
+        <p>Built a modular blog app with authentication, CRUD posts, and REST APIs. Responsive UI with Bootstrap.</p>
+        <p><strong>Tech:</strong> Django, DRF, SQLite, Bootstrap, Python</p>
+        <p><a href="https://rahul3998.pythonanywhere.com/" target="_blank" class="btn-small">Live Demo</a></p>
+      </div>
+      <div class="card" data-aos="flip-left" data-aos-delay="400">
+        <h3>🌍 IBM Travel Recommendation Website</h3>
+        <p>A multi-page website built with HTML, CSS, and JavaScript to explore beaches, temples, and country-based destinations.</p>
+        <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+        <p>
+          <a href="https://github.com/Rahul3998/IBM-JS" target="_blank" class="btn-small">GitHub</a>
+          <a href="https://rahul3998.github.io/IBM-JS/" target="_blank" class="btn-small">Live Demo</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section container" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <p>Interested in working together? Get in touch!</p>
+    <form id="contactForm" class="form card">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+      <p id="formStatus" class="status"></p>
+    </form>
+    <div class="socials">
+      <a href="mailto:rahuladagale3998@gmail.com">📧 Email</a>
+      <a href="https://www.linkedin.com/in/rahul-adagale/" target="_blank">💼 LinkedIn</a>
+      <a href="https://github.com/Rahul3998" target="_blank">🐙 GitHub</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Rahul Adagale.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({duration: 1000, once: true});</script>
+  <script>
+// Smooth scroll + highlight nav link
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav a");
+
+// Observe section visibility
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const id = entry.target.getAttribute("id");
+    if (entry.isIntersecting) {
+      // Fade-in animation
+      entry.target.classList.add("show");
+
+      // Update active nav link
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${id}`) {
+          link.classList.add("active");
+        }
+      });
+    }
+  });
+}, { threshold: 0.3 });
+
+// Attach observer to each section
+sections.forEach(section => {
+  observer.observe(section);
+});
+</script>
+
+</body>
+</html>
