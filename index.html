@@ -3,186 +3,473 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rahul Adagale | Portfolio</title>
+  <title>Rahul Adagale | Software Engineer Portfolio</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- AOS (Animate On Scroll) -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script defer src="script.js"></script>
 </head>
 <body>
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- ================= Header ================= -->
   <header class="site-header">
     <div class="container nav-container">
-      <a href="#home" class="logo">RAHUL ADAGALE</a>
-      <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+      <a href="#home" class="logo">
+        <span class="logo-mark">&lt;/&gt;</span>
+        <span class="logo-text">Rahul <span>Adagale</span></span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <section id="home" class="hero">
-    <div class="container hero-inner" data-aos="fade-up">
-      <h1>Hi, I'm <span class="highlight">Rahul</span> 👋</h1>
-      <p>Collaborative and innovative <strong>Software Developer</strong> specializing in Java, Python, and full-stack development.</p>
-      <p><a class="btn" href="#projects">View My Work</a></p>
-    </div>
-  </section>
-
-  <section class="section about" id="about">
-  <div class="container">
-    <h2>About Me</h2>
-    <p class="about-text">
-      Collaborative and innovative software developer with a strong background in computer science 
-      and expertise in Java and Python. Proficient in algorithms, data structures, and SDLC with a 
-      focus on coding and debugging. Enthusiastic team player dedicated to delivering impactful 
-      software solutions and improving user experiences.
-    </p>
-
-    <h2>Skills</h2>
-    <div class="skills" id="skills">
-      <div class="skill-category">
-        <strong>Languages:</strong>
-        <span class="badge">Java</span>
-        <span class="badge">Python</span>
-        <span class="badge">JavaScript</span>
-        <span class="badge">C#</span>
+  <main>
+    <!-- ================= Hero ================= -->
+    <section id="home" class="hero section">
+      <!-- Floating Glow Background -->
+      <div class="hero-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
       </div>
 
-      <div class="skill-category">
-        <strong>Frameworks:</strong>
-        <span class="badge">Django</span>
-        <span class="badge">Spring Boot</span>
-        <span class="badge">React</span>
-        <span class="badge">.NET Core</span>
-      </div>
+      <div class="container hero-grid">
+        <div class="hero-content" data-aos="fade-up">
+          <p class="hero-eyebrow">Software Engineer · Full-Stack · Problem Solver</p>
+          <h1>Hi, I'm <span class="highlight">Rahul</span> 👋</h1>
+          <p class="hero-subtitle">
+            I build <strong>scalable</strong>, <strong>maintainable</strong> software using
+            <span class="tech-highlight">Java</span>, <span class="tech-highlight">Python</span>,
+            and modern web technologies. I love turning real-world problems into clean,
+            production-ready solutions.
+          </p>
 
-      <div class="skill-category">
-        <strong>Databases:</strong>
-        <span class="badge">MySQL</span>
-        <span class="badge">SQLite</span>
-        <span class="badge">PostgreSQL</span>
-      </div>
+          <div class="hero-actions">
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="#contact" class="btn ghost">Let’s Connect</a>
 
-      <div class="skill-category">
-        <strong>Web & Mobile:</strong>
-        <span class="badge">HTML</span>
-        <span class="badge">CSS</span>
-        <span class="badge">React Native</span>
-      </div>
+            <!-- NEW: View Resume button -->
+            <a 
+              href="assets/Rahul_Adagale_SDE.pdf" 
+              target="_blank" 
+              class="btn resume-btn"
+            >
+              View Resume
+            </a>
+          </div>
 
-      <div class="skill-category">
-        <strong>Tools:</strong>
-        <span class="badge">Git</span>
-        <span class="badge">GitHub</span>
-        <span class="badge">GitLab</span>
-        <span class="badge">Postman</span>
-        <span class="badge">Pandas</span>
-        <span class="badge">NumPy</span>
-        <span class="badge">Regex</span>
-      </div>
-    </div>
-  </div>
-</section>
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <span class="meta-label">Current</span>
+              <span class="meta-value">Software Engineer @ Fidel Softech</span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="meta-label">Experience</span>
+              <span class="meta-value">Java · Python · Django · React Native</span>
+            </div>
+          </div>
 
+          <!-- Tech stack strip -->
+          <div class="tech-stack-strip">
+            <p class="tech-strip-label">Tech stack</p>
+            <div class="tech-strip-icons">
+              <div class="stack-pill">Java</div>
+              <div class="stack-pill">Python</div>
+              <div class="stack-pill">Django</div>
+              <div class="stack-pill">Spring Boot</div>
+              <div class="stack-pill">React</div>
+              <div class="stack-pill">React Native</div>
+              <div class="stack-pill">JavaScript</div>
+              <div class="stack-pill">MySQL</div>
+              <div class="stack-pill">Git</div>
+            </div>
+          </div>
+        </div>
 
-  <section id="experience" class="section container" data-aos="fade-left">
-    <h2>Experience</h2>
-    <div class="timeline">
-      <div class="timeline-item" data-aos="zoom-in">
-        <h3>Software Engineer</h3>
-        <span>Fidel Softech Pvt. Ltd. | Jan 2024 – Present</span>
-        <p>Worked on localization engineering, i18n automation with Python & regex, full-stack development with Java, Django, React Native, and REST API integration.</p>
-      </div>
-      <div class="timeline-item" data-aos="zoom-in" data-aos-delay="200">
-        <h3>Java Developer Intern</h3>
-        <span>Fidel Softech Pvt. Ltd. | Jul 2023 – Dec 2023</span>
-        <p>Developed Java tools, REST APIs with Django, and backend modules. Focused on OOP, JDBC, and regex-based automation.</p>
-      </div>
-    </div>
-  </section>
+        <aside class="hero-aside" data-aos="fade-left">
+          <div class="hero-card">
+            <div class="hero-avatar">
+              <img
+                src="assets/profile_circle.png"
+                alt="Rahul Adagale"
+                class="hero-photo"
+              />
+            </div>
+            <p class="hero-role">Software Engineer</p>
+            <p class="hero-location">Pune, India · Open to opportunities</p>
 
-  <section id="projects" class="section container">
-    <h2 data-aos="fade-up">Projects</h2>
-    <div class="grid-3">
-      <div class="card" data-aos="flip-left">
-        <h3>💬 Real-Time Chat Application</h3>
-        <p>Developed a Java-based chat app using Sockets and Multithreading. Handles multiple clients with real-time messaging.</p>
-        <p><strong>Tech:</strong> Java, OOP, Sockets, Multithreading</p>
-      </div>
-      <div class="card" data-aos="flip-left" data-aos-delay="200">
-        <h3>📝 Django Blog Platform</h3>
-        <p>Built a modular blog app with authentication, CRUD posts, and REST APIs. Responsive UI with Bootstrap.</p>
-        <p><strong>Tech:</strong> Django, DRF, SQLite, Bootstrap, Python</p>
-        <p><a href="https://rahul3998.pythonanywhere.com/" target="_blank" class="btn-small">Live Demo</a></p>
-      </div>
-      <div class="card" data-aos="flip-left" data-aos-delay="400">
-        <h3>🌍 IBM Travel Recommendation Website</h3>
-        <p>A multi-page website built with HTML, CSS, and JavaScript to explore beaches, temples, and country-based destinations.</p>
-        <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-        <p>
-          <a href="https://github.com/Rahul3998/IBM-JS" target="_blank" class="btn-small">GitHub</a>
-          <a href="https://rahul3998.github.io/IBM-JS/" target="_blank" class="btn-small">Live Demo</a>
-        </p>
-      </div>
-    </div>
-  </section>
+            <div class="hero-stack">
+              <span class="chip">Java</span>
+              <span class="chip">Python</span>
+              <span class="chip">Django</span>
+              <span class="chip">Spring Boot</span>
+              <span class="chip">React Native</span>
+            </div>
+            <!-- Currently Learning Strip -->
+            <div class="learning-strip">
+              <p class="learning-label">Learning</p>
+              <div class="learning-tags">
+                <span class="learning-pill">Docker</span>
+                <span class="learning-pill">Kubernetes</span>
+                <span class="learning-pill">AWS Basics</span>
+                <span class="learning-pill">React Native Advanced</span>
+                <span class="learning-pill">DevOps Fundamentals</span>
+                <span class="learning-pill">DSA</span>
+              </div>
+            </div>
 
-  <section id="contact" class="section container" data-aos="fade-up">
-    <h2>Contact Me</h2>
-    <p>Interested in working together? Get in touch!</p>
-    <form id="contactForm" class="form card">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-      <p id="formStatus" class="status"></p>
-    </form>
-    <div class="socials">
-      <a href="mailto:rahuladagale3998@gmail.com">📧 Email</a>
-      <a href="https://www.linkedin.com/in/rahul-adagale/" target="_blank">💼 LinkedIn</a>
-      <a href="https://github.com/Rahul3998" target="_blank">🐙 GitHub</a>
-    </div>
-  </section>
+            <div class="hero-links">
+              <a href="mailto:rahuladagale3998@gmail.com">Email</a>
+              <a href="https://www.linkedin.com/in/rahul-adagale/" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a href="https://github.com/Rahul3998" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
 
+    <!-- ================= About & Skills ================= -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section-header" data-aos="fade-up">
+          <p class="section-eyebrow">About</p>
+          <h2>Who I Am</h2>
+          <p class="section-description">
+            Collaborative and innovative software developer with a strong background in computer science
+            and expertise in Java and Python. I enjoy working across the stack, with a focus on designing
+            robust systems, writing clean code, and improving user experience.
+          </p>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-text" data-aos="fade-right">
+            <p>
+              I’ve worked on localization engineering, automation, and full-stack applications, using
+              technologies like Java, Django, React Native, and REST APIs. I’m comfortable owning
+              features end-to-end — from understanding requirements and designing solutions, to
+              implementation, testing, and deployment.
+            </p>
+            <p>
+              My day-to-day involves debugging complex issues, writing scalable backend services, and
+              building interfaces that users enjoy using. I care about code quality, collaboration, and
+              continuous learning.
+            </p>
+          </div>
+
+          <div class="skills" data-aos="fade-left">
+            <div class="skills-group">
+              <h3>Languages</h3>
+              <div class="chip-row">
+                <span class="chip">Java</span>
+                <span class="chip">Python</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">C#</span>
+              </div>
+            </div>
+
+            <div class="skills-group">
+              <h3>Frameworks</h3>
+              <div class="chip-row">
+                <span class="chip">Django</span>
+                <span class="chip">Spring Boot</span>
+                <span class="chip">React</span>
+                <span class="chip">.NET Core</span>
+              </div>
+            </div>
+
+            <div class="skills-group">
+              <h3>Databases</h3>
+              <div class="chip-row">
+                <span class="chip">MySQL</span>
+                <span class="chip">SQLite</span>
+                <span class="chip">PostgreSQL</span>
+              </div>
+            </div>
+
+            <div class="skills-group">
+              <h3>Web & Mobile</h3>
+              <div class="chip-row">
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">React Native</span>
+              </div>
+            </div>
+
+            <div class="skills-group">
+              <h3>Tools & Libraries</h3>
+              <div class="chip-row">
+                <span class="chip">Git</span>
+                <span class="chip">GitHub</span>
+                <span class="chip">GitLab</span>
+                <span class="chip">Postman</span>
+                <span class="chip">Pandas</span>
+                <span class="chip">NumPy</span>
+                <span class="chip">Regex</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Experience ================= -->
+    <section id="experience" class="section">
+      <div class="container">
+        <header class="section-header" data-aos="fade-up">
+          <p class="section-eyebrow">Experience</p>
+          <h2>Where I’ve Worked</h2>
+        </header>
+
+        <div class="timeline" data-aos="fade-up">
+          <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Software Engineer</h3>
+              <p class="timeline-meta">
+                Fidel Softech Pvt. Ltd. · Jan 2024 – Present
+              </p>
+              <p>
+                Working on localization engineering, i18n automation using Python and Regex, and
+                full-stack development with Java, Django, React Native, and REST API integration.
+                Focused on building reliable tools that streamline workflows and improve delivery.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Java Developer Intern</h3>
+              <p class="timeline-meta">
+                Fidel Softech Pvt. Ltd. · Jul 2023 – Dec 2023
+              </p>
+              <p>
+                Developed Java tools, REST APIs using Django, and backend modules. Worked extensively
+                with OOP, JDBC, and regex-based automation to process data and support internal tools.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Projects ================= -->
+    <section id="projects" class="section">
+      <div class="container">
+        <header class="section-header" data-aos="fade-up">
+          <p class="section-eyebrow">Projects</p>
+          <h2>Selected Work</h2>
+        </header>
+
+        <div class="projects-grid">
+          <article class="card project-card" data-aos="fade-up">
+            <div class="card-body">
+              <h3>💬 Real-Time Chat Application</h3>
+              <p class="project-summary">
+                Java-based chat application using sockets and multithreading, enabling multiple clients
+                to communicate in real time with a simple, robust protocol.
+              </p>
+              <p class="project-tech">
+                Tech: Java, OOP, Sockets, Multithreading
+              </p>
+            </div>
+          </article>
+
+          <article class="card project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-body">
+              <h3>📝 Django Blog Platform</h3>
+              <p class="project-summary">
+                Modular blog application with authentication, CRUD posts, and REST APIs. Includes a
+                responsive interface and clean separation of concerns.
+              </p>
+              <p class="project-tech">
+                Tech: Django, Django REST Framework, SQLite, Bootstrap, Python
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://rahul3998.pythonanywhere.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="btn small"
+                >
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-body">
+              <h3>🌍 IBM Travel Recommendation Website</h3>
+              <p class="project-summary">
+                Multi-page website to explore beaches, temples, and country-based destinations with
+                interactive UI components and clean layouts.
+              </p>
+              <p class="project-tech">
+                Tech: HTML, CSS, JavaScript
+              </p>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Rahul3998/IBM-JS"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="btn small ghost"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://rahul3998.github.io/IBM-JS/"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="btn small"
+                >
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Contact ================= -->
+    <section id="contact" class="section">
+      <div class="container">
+        <header class="section-header" data-aos="fade-up">
+          <p class="section-eyebrow">Contact</p>
+          <h2>Let’s Build Something</h2>
+          <p class="section-description">
+            Interested in working together, or just want to say hi?
+            Drop a message and I’ll get back to you.
+          </p>
+        </header>
+
+        <div class="contact-grid">
+          <form id="contactForm" class="card contact-form" data-aos="fade-right">
+            <div class="field">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Tell me a bit about what you have in mind..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn primary full-width">
+              Send Message
+            </button>
+            <p id="formStatus" class="status" role="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="contact-info" data-aos="fade-left">
+            <div class="card">
+              <div class="card-body">
+                <h3>Prefer Email or LinkedIn?</h3>
+                <p>
+                  You can also reach out directly through any of these channels.
+                </p>
+                <ul class="contact-list">
+                  <li>
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:rahuladagale3998@gmail.com">
+                      rahuladagale3998@gmail.com
+                    </a>
+                  </li>
+                  <li>
+                    <span class="contact-label">LinkedIn</span>
+                    <a
+                      href="https://www.linkedin.com/in/rahul-adagale/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      linkedin.com/in/rahul-adagale
+                    </a>
+                  </li>
+                  <li>
+                    <span class="contact-label">GitHub</span>
+                    <a
+                      href="https://github.com/Rahul3998"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      github.com/Rahul3998
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Footer ================= -->
   <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Rahul Adagale.</p>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Rahul Adagale. All rights reserved.</p>
+      <p class="footer-note">Built with care using HTML, CSS & JavaScript.</p>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({duration: 1000, once: true});</script>
-  <script>
-// Smooth scroll + highlight nav link
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav a");
-
-// Observe section visibility
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    const id = entry.target.getAttribute("id");
-    if (entry.isIntersecting) {
-      // Fade-in animation
-      entry.target.classList.add("show");
-
-      // Update active nav link
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${id}`) {
-          link.classList.add("active");
-        }
-      });
-    }
-  });
-}, { threshold: 0.3 });
-
-// Attach observer to each section
-sections.forEach(section => {
-  observer.observe(section);
-});
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
