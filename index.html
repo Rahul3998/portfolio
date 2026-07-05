@@ -1,395 +1,599 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rahul Adagale | Python Full-Stack Developer</title>
+<meta name="description" content="Rahul Adagale — Python Full-Stack Developer with 2+ years building FastAPI/Django backends, RESTful APIs, and AI-powered applications with LangChain, LangGraph and RAG.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B1220;
+    --panel:#121A2E;
+    --panel-2:#161F36;
+    --border:#243250;
+    --text:#E9EEF7;
+    --muted:#8C99B4;
+    --cyan:#5EEAD4;
+    --amber:#F4B740;
+    --radius:14px;
+    --mono:'JetBrains Mono', monospace;
+    --sans:'Inter', sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
 
-  <title>Rahul Adagale | Python Full-Stack Developer</title>
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+  section{padding:110px 0;}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--cyan);
+    display:flex;align-items:center;gap:10px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{content:"//";color:var(--amber);}
+  h1,h2,h3{font-family:var(--sans);font-weight:800;letter-spacing:-0.02em;}
+  h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:44px;}
+  .muted{color:var(--muted);}
 
-  <!-- SEO -->
-  <meta
-    name="description"
-    content="Rahul Adagale �C Python Full-Stack Developer with 2+ years of experience in Django, FastAPI, REST APIs, automation, and backend systems."
-  />
+  /* NAV */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(11,18,32,.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  nav{
+    max-width:1120px;margin:0 auto;padding:16px 28px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .logo{font-family:var(--mono);font-weight:700;font-size:17px;}
+  .logo span{color:var(--cyan);}
+  .navlinks{display:flex;gap:34px;font-size:14px;font-weight:500;}
+  .navlinks a{color:var(--muted);transition:color .2s;}
+  .navlinks a:hover{color:var(--text);}
+  .navcta{
+    font-family:var(--mono);font-size:13px;padding:9px 16px;
+    border:1px solid var(--cyan);border-radius:8px;color:var(--cyan)!important;
+    transition:all .2s;
+  }
+  .navcta:hover{background:var(--cyan);color:var(--bg)!important;}
+  .menu-btn{display:none;background:none;border:none;color:var(--text);font-size:22px;cursor:pointer;}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  /* HERO */
+  .hero{
+    padding:170px 0 100px;
+    position:relative;
+    display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;
+  }
+  .hero::before{
+    content:"";position:absolute;top:-200px;right:-200px;width:600px;height:600px;
+    background:radial-gradient(circle, rgba(94,234,212,.10), transparent 70%);
+    pointer-events:none;
+  }
+  .hero h1{font-size:clamp(38px,5vw,56px);line-height:1.08;margin-bottom:20px;}
+  .hero h1 .accent{color:var(--cyan);}
+  .hero p.lead{font-size:17px;color:var(--muted);max-width:520px;margin-bottom:32px;}
+  .status-row{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:36px;font-family:var(--mono);font-size:13px;color:var(--muted);}
+  .status-row b{color:var(--text);font-weight:600;}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);display:inline-block;margin-right:6px;box-shadow:0 0 8px var(--cyan);}
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
+  .btnrow{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    font-family:var(--mono);font-size:14px;font-weight:500;
+    padding:13px 22px;border-radius:9px;cursor:pointer;transition:all .2s;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .btn-primary{background:var(--cyan);color:#04201C;border:1px solid var(--cyan);}
+  .btn-primary:hover{background:transparent;color:var(--cyan);}
+  .btn-ghost{border:1px solid var(--border);color:var(--text);}
+  .btn-ghost:hover{border-color:var(--cyan);color:var(--cyan);}
 
-  <!-- AOS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  /* Terminal card - signature element */
+  .terminal{
+    background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
+    overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);
+  }
+  .term-bar{
+    display:flex;align-items:center;gap:8px;padding:12px 16px;
+    background:var(--panel-2);border-bottom:1px solid var(--border);
+  }
+  .term-dot{width:10px;height:10px;border-radius:50%;}
+  .term-bar span:nth-child(4){
+    margin-left:8px;font-family:var(--mono);font-size:12px;color:var(--muted);
+  }
+  .term-body{padding:22px 20px;font-family:var(--mono);font-size:13.5px;}
+  .term-body .line{margin-bottom:6px;white-space:pre-wrap;}
+  .prompt{color:var(--cyan);}
+  .cmd{color:var(--text);}
+  .json-key{color:#7FB8F5;}
+  .json-str{color:var(--amber);}
+  .json-punc{color:var(--muted);}
+  .caret{display:inline-block;width:8px;height:15px;background:var(--cyan);vertical-align:middle;animation:blink 1s step-end infinite;}
+  @keyframes blink{50%{opacity:0;}}
+
+  /* SECTIONS shared */
+  .panel{
+    background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
+    padding:28px;
+  }
+  .grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;}
+
+  /* ABOUT */
+  #about .lead-text{font-size:16.5px;color:#C7D0E2;margin-bottom:18px;}
+  .skill-block{margin-bottom:22px;}
+  .skill-block h4{
+    font-family:var(--mono);font-size:12.5px;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;
+  }
+  .chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{
+    font-family:var(--mono);font-size:12.5px;padding:6px 12px;
+    border:1px solid var(--border);border-radius:6px;color:var(--text);
+    background:var(--panel-2);
+  }
+  .chip.ai{border-color:rgba(244,183,64,.4);color:var(--amber);}
+
+  /* EXPERIENCE */
+  .timeline{position:relative;padding-left:36px;}
+  .timeline::before{
+    content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;
+    background:linear-gradient(var(--cyan), transparent);
+  }
+  .job{position:relative;margin-bottom:46px;}
+  .job:last-child{margin-bottom:0;}
+  .job::before{
+    content:"";position:absolute;left:-36px;top:6px;width:14px;height:14px;
+    border-radius:50%;background:var(--bg);border:2px solid var(--cyan);
+  }
+  .job-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:baseline;margin-bottom:4px;}
+  .job-title{font-size:19px;font-weight:700;}
+  .job-badge{
+    font-family:var(--mono);font-size:11px;padding:3px 9px;border-radius:20px;
+    background:rgba(94,234,212,.12);color:var(--cyan);border:1px solid rgba(94,234,212,.35);
+  }
+  .job-meta{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-bottom:14px;}
+  .job ul{padding-left:0;}
+  .job li{position:relative;padding-left:20px;margin-bottom:9px;color:#C7D0E2;font-size:14.5px;}
+  .job li::before{content:"▸";position:absolute;left:0;color:var(--amber);}
+
+  /* PROJECTS */
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .proj-card{
+    background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);
+    padding:26px;display:flex;flex-direction:column;transition:border-color .2s, transform .2s;
+  }
+  .proj-card:hover{border-color:var(--cyan);transform:translateY(-4px);}
+  .proj-num{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:14px;}
+  .proj-card h3{font-size:18px;margin-bottom:10px;}
+  .proj-card p{font-size:13.8px;color:var(--muted);margin-bottom:18px;flex-grow:1;}
+  .proj-tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .proj-tags span{
+    font-family:var(--mono);font-size:11px;padding:4px 9px;border-radius:5px;
+    background:var(--panel-2);color:#9FE8DC;border:1px solid var(--border);
+  }
+
+  /* EDUCATION */
+  .edu-card{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .edu-card h3{font-size:19px;margin-bottom:6px;}
+  .edu-score{
+    font-family:var(--mono);font-size:14px;color:var(--cyan);
+    border:1px solid rgba(94,234,212,.4);padding:8px 16px;border-radius:9px;
+  }
+
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;}
+  .endpoint{
+    display:flex;align-items:center;gap:12px;padding:14px 16px;
+    border:1px solid var(--border);border-radius:9px;margin-bottom:12px;
+    font-family:var(--mono);font-size:13.5px;transition:border-color .2s;
+  }
+  .endpoint:hover{border-color:var(--cyan);}
+  .method{color:var(--bg);background:var(--cyan);font-weight:700;font-size:11px;padding:3px 7px;border-radius:4px;}
+  form{display:flex;flex-direction:column;gap:14px;}
+  input,textarea{
+    background:var(--panel-2);border:1px solid var(--border);border-radius:9px;
+    padding:13px 14px;color:var(--text);font-family:var(--sans);font-size:14px;
+  }
+  input:focus,textarea:focus{outline:none;border-color:var(--cyan);}
+  textarea{min-height:120px;resize:vertical;}
+  form button{align-self:flex-start;}
+
+  footer{
+    border-top:1px solid var(--border);padding:34px 0;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-family:var(--mono);font-size:12.5px;color:var(--muted);
+  }
+
+  /* ANIMATIONS */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  .reveal-stagger > *{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal-stagger.in > *{opacity:1;transform:translateY(0);}
+  .reveal-stagger.in > *:nth-child(1){transition-delay:.05s;}
+  .reveal-stagger.in > *:nth-child(2){transition-delay:.15s;}
+  .reveal-stagger.in > *:nth-child(3){transition-delay:.25s;}
+  .reveal-stagger.in > *:nth-child(4){transition-delay:.35s;}
+
+  .hero h1{opacity:0;animation:fadeUp .8s ease .1s forwards;}
+  .hero .eyebrow{opacity:0;animation:fadeUp .6s ease forwards;}
+  .hero p.lead{opacity:0;animation:fadeUp .8s ease .25s forwards;}
+  .hero .status-row{opacity:0;animation:fadeUp .8s ease .4s forwards;}
+  .hero .btnrow{opacity:0;animation:fadeUp .8s ease .55s forwards;}
+  .terminal{opacity:0;animation:fadeIn 1s ease .3s forwards;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+  .term-body .line{opacity:0;}
+  .term-body .line.shown{animation:lineIn .35s ease forwards;}
+  @keyframes lineIn{from{opacity:0;transform:translateX(-6px);}to{opacity:1;transform:translateX(0);}}
+
+  .dot{animation:pulse 1.8s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{box-shadow:0 0 6px var(--cyan);}50%{box-shadow:0 0 14px 3px var(--cyan);}}
+
+  .proj-card, .job, .chip, .endpoint{will-change:transform;}
+  .navcta, .btn, .proj-card, .endpoint, .chip{transition:all .25s ease;}
+  .btn-primary:active{transform:scale(.97);}
+  .chip:hover{border-color:var(--cyan);transform:translateY(-2px);}
+
+  .form-status{
+    font-family:var(--mono);font-size:13px;padding:10px 12px;border-radius:8px;
+    display:none;
+  }
+  .form-status.show{display:block;}
+  .form-status.ok{background:rgba(94,234,212,.1);border:1px solid rgba(94,234,212,.4);color:var(--cyan);}
+  .form-status.err{background:rgba(244,95,87,.1);border:1px solid rgba(244,95,87,.4);color:#FF8A82;}
+  .spinner{
+    width:14px;height:14px;border-radius:50%;border:2px solid rgba(4,32,28,.3);
+    border-top-color:#04201C;display:inline-block;animation:spin .7s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;}
+    .reveal, .reveal-stagger > *{opacity:1 !important;transform:none !important;}
+  }
+
+  @media(max-width:860px){
+    .navlinks{display:none;}
+    .menu-btn{display:block;}
+    .hero{grid-template-columns:1fr;padding-top:140px;}
+    .grid-2{grid-template-columns:1fr;}
+    .proj-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    section{padding:70px 0;}
+  }
+</style>
 </head>
-
 <body>
-  <!-- Scroll progress -->
-  <div class="scroll-progress">
-    <div class="scroll-progress-bar"></div>
-  </div>
 
-  <!-- ================= Header ================= -->
-  <header class="site-header">
-    <div class="container nav-container">
-      <a href="#home" class="logo">
-        <span class="logo-mark">&lt;/&gt;</span>
-        <span class="logo-text">Rahul <span>Adagale</span></span>
-      </a>
+<header>
+  <nav>
+    <a href="#home" class="logo">rahul<span>.dev()</span></a>
+    <ul class="navlinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+    <a href="#contact" class="navcta">Let's talk</a>
+    <button class="menu-btn" aria-label="menu">☰</button>
+  </nav>
+</header>
 
-      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+<main class="wrap">
 
-      <nav class="nav" aria-label="Primary navigation">
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div>
+      <div class="eyebrow">Backend Engineering / AI Systems</div>
+      <h1>Hi, I'm Rahul —<br>I build <span class="accent">backends</span> that talk to APIs, databases, and LLMs.</h1>
+      <p class="lead">Python Full-Stack Developer with 2+ years designing scalable backend systems, RESTful APIs, and AI-powered applications using FastAPI, Django, LangChain and RAG.</p>
+      <div class="status-row">
+        <span><span class="dot"></span><b>Open to work</b></span>
+        <span>Pune, India</span>
+        <span>@ Fidel Softech</span>
+      </div>
+      <div class="btnrow">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="assets/Rahul_Adagale_SDE.pdf" class="btn btn-ghost">Download Resume</a>
+        <a href="#contact" class="btn btn-ghost">Let's Connect</a>
+      </div>
+    </div>
+
+    <div class="terminal">
+      <div class="term-bar">
+        <span class="term-dot" style="background:#FF5F57"></span>
+        <span class="term-dot" style="background:#FEBC2E"></span>
+        <span class="term-dot" style="background:#28C840"></span>
+        <span>profile.sh</span>
+      </div>
+      <div class="term-body" id="termBody">
+        <div class="line" data-line><span class="prompt">$</span> <span class="cmd">curl -s https://rahul.dev/api/profile | jq</span></div>
+        <div class="line" data-line>{</div>
+        <div class="line" data-line>&nbsp;&nbsp;<span class="json-key">"name"</span><span class="json-punc">:</span> <span class="json-str">"Rahul Adagale"</span>,</div>
+        <div class="line" data-line>&nbsp;&nbsp;<span class="json-key">"role"</span><span class="json-punc">:</span> <span class="json-str">"Python Full-Stack Developer"</span>,</div>
+        <div class="line" data-line>&nbsp;&nbsp;<span class="json-key">"experience_years"</span><span class="json-punc">:</span> <span class="json-str">"2+"</span>,</div>
+        <div class="line" data-line>&nbsp;&nbsp;<span class="json-key">"stack"</span><span class="json-punc">:</span> [<span class="json-str">"FastAPI"</span>, <span class="json-str">"Django"</span>, <span class="json-str">"React"</span>, <span class="json-str">"LangChain"</span>],</div>
+        <div class="line" data-line>&nbsp;&nbsp;<span class="json-key">"specialties"</span><span class="json-punc">:</span> [<span class="json-str">"RAG"</span>, <span class="json-str">"LangGraph"</span>, <span class="json-str">"LLM Integration"</span>],</div>
+        <div class="line" data-line>&nbsp;&nbsp;<span class="json-key">"location"</span><span class="json-punc">:</span> <span class="json-str">"Pune, India"</span>,</div>
+        <div class="line" data-line>&nbsp;&nbsp;<span class="json-key">"status"</span><span class="json-punc">:</span> <span class="json-str">"open_to_work"</span></div>
+        <div class="line" data-line>}<span class="caret"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="eyebrow reveal">About</div>
+    <h2 class="reveal">Professional Summary</h2>
+    <div class="grid-2 reveal">
+      <div>
+        <p class="lead-text">Python Full-Stack Developer with 2+ years of experience designing and developing scalable backend systems, RESTful APIs, and AI-powered applications. Proficient in FastAPI, Django, React, MySQL, and modern AI technologies including LangChain, LangGraph, Retrieval-Augmented Generation (RAG), and Large Language Models.</p>
+        <p class="lead-text">Experienced in building production-grade applications, integrating cloud and local AI models, optimizing data processing workflows, and collaborating in Agile development environments. Passionate about backend engineering, AI systems, and scalable software architecture.</p>
+      </div>
+      <div>
+        <div class="skill-block">
+          <h4>Languages</h4>
+          <div class="chips"><span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">SQL</span></div>
+        </div>
+        <div class="skill-block">
+          <h4>Backend</h4>
+          <div class="chips">
+            <span class="chip">FastAPI</span><span class="chip">Django</span><span class="chip">Django ORM</span>
+            <span class="chip">REST APIs</span><span class="chip">JWT Auth</span><span class="chip">Pydantic</span><span class="chip">Uvicorn</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h4>Frontend</h4>
+          <div class="chips"><span class="chip">React.js</span><span class="chip">Next.js</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">ES6</span></div>
+        </div>
+        <div class="skill-block">
+          <h4>Databases</h4>
+          <div class="chips"><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span></div>
+        </div>
+        <div class="skill-block">
+          <h4>AI &amp; LLM</h4>
+          <div class="chips">
+            <span class="chip ai">LangChain</span><span class="chip ai">LangGraph</span><span class="chip ai">LangSmith</span>
+            <span class="chip ai">RAG</span><span class="chip ai">Ollama</span><span class="chip ai">OpenAI API</span>
+            <span class="chip ai">Vector DBs</span><span class="chip ai">AI Agents</span><span class="chip ai">Prompt Engineering</span>
+            <span class="chip ai">Hugging Face</span><span class="chip ai">Transformers</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h4>Automation &amp; Testing</h4>
+          <div class="chips">
+            <span class="chip">Regex</span><span class="chip">Web Scraping</span><span class="chip">Selenium</span>
+            <span class="chip">BeautifulSoup</span><span class="chip">Pandas</span><span class="chip">NumPy</span>
+            <span class="chip">Postman</span><span class="chip">Pytest</span>
+          </div>
+        </div>
+        <div class="skill-block">
+          <h4>DevOps &amp; Tools</h4>
+          <div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">GitLab</span><span class="chip">Linux</span><span class="chip">CI/CD</span><span class="chip">VS Code</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="eyebrow reveal">Experience</div>
+    <h2 class="reveal">Where I've Worked</h2>
+    <div class="timeline">
+      <div class="job reveal">
+        <div class="job-head">
+          <span class="job-title">Software Engineer — Python Full-Stack Developer</span>
+          <span class="job-badge">current</span>
+        </div>
+        <div class="job-meta">Fidel Softech Pvt. Ltd. · Jan 2024 – Present · Pune, Maharashtra</div>
         <ul>
-          <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#education" class="nav-link">Education</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li>Designed and developed RESTful APIs using FastAPI and Django, implementing authentication, request validation, exception handling, and modular architecture.</li>
+          <li>Developed automation solutions for processing large volumes of structured and unstructured data, significantly improving operational efficiency.</li>
+          <li>Implemented web scraping pipelines for static and JavaScript-rendered sites using Python, Selenium, and BeautifulSoup.</li>
+          <li>Designed optimized Regex to validate, clean, normalize, and extract information from complex datasets.</li>
+          <li>Integrated backend services with MySQL for efficient data storage, retrieval, and API performance.</li>
+          <li>Performed comprehensive API testing using Postman, validating request/response flows and edge cases.</li>
+          <li>Collaborated with QA engineers, business analysts, and stakeholders in an Agile/Scrum environment.</li>
         </ul>
-      </nav>
+      </div>
+      <div class="job reveal">
+        <div class="job-head">
+          <span class="job-title">Python Developer Intern</span>
+        </div>
+        <div class="job-meta">Fidel Softech Pvt. Ltd. (formerly LinguaSol) · Jul 2023 – Dec 2023 · Pune, Maharashtra</div>
+        <ul>
+          <li>Contributed to Python application development, debugging, and enhancement of internal software solutions.</li>
+          <li>Assisted in feature development, bug fixing, and code reviews under senior developer guidance.</li>
+          <li>Developed Python scripts to automate repetitive development tasks and improve workflow efficiency.</li>
+          <li>Gained practical experience in backend development, software lifecycle management, and production workflows.</li>
+        </ul>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <!-- ================= Hero ================= -->
-    <section id="home" class="hero section">
-      <div class="hero-bg">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-      </div>
-
-      <div class="container hero-grid">
-        <div class="hero-content" data-aos="fade-up">
-          <p class="hero-eyebrow">
-            Python Full-Stack Developer, Backend & API Engineering, Automation
-          </p>
-
-          <h1>Hi, I'm <span class="highlight">Rahul</span></h1>
-
-          <p class="hero-subtitle">
-            I am a <strong>Python Full-Stack Developer</strong> with 2+ years of experience
-            building <strong>backend services</strong>, <strong>RESTful APIs</strong>, and
-            <strong>automation tools</strong> using
-            <span class="tech-highlight">Python</span>,
-            <span class="tech-highlight">Django</span>,
-            <span class="tech-highlight">FastAPI</span>, and
-            <span class="tech-highlight">React</span>.
-            I specialize in production-ready systems, data processing,
-            and scalable backend design.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#projects" class="btn primary">View Projects</a>
-            <a href="#contact" class="btn ghost">Lets Connect</a>
-            <a href="assets/Rahul_Adagale_SDE.pdf" target="_blank" class="btn resume-btn">
-              View Resume
-            </a>
-          </div>
-
-          <div class="hero-meta">
-            <div class="hero-meta-item">
-              <span class="meta-label">Current Role</span>
-              <span class="meta-value">Python Full-Stack Developer @ Fidel Softech</span>
-            </div>
-            <div class="hero-meta-item">
-              <span class="meta-label">Core Focus</span>
-              <span class="meta-value">Django, FastAPI, REST APIs, Automation</span>
-            </div>
-          </div>
-
-          <div class="tech-stack-strip">
-            <p class="tech-strip-label">Primary Stack</p>
-            <div class="tech-strip-icons">
-              <div class="stack-pill">Python</div>
-              <div class="stack-pill">Django</div>
-              <div class="stack-pill">FastAPI</div>
-              <div class="stack-pill">REST APIs</div>
-              <div class="stack-pill">MySQL</div>
-              <div class="stack-pill">React</div>
-              <div class="stack-pill">JWT</div>
-              <div class="stack-pill">Regex</div>
-            </div>
-          </div>
-        </div>
-
-        <aside class="hero-aside" data-aos="fade-left">
-          <div class="hero-card">
-            <div class="hero-avatar">
-              <img src="assets/profile_circle.png" alt="Rahul Adagale" class="hero-photo" />
-            </div>
-
-            <p class="hero-role">Python Full-Stack Developer</p>
-            <p class="hero-location">Pune, India, Open to Opportunities</p>
-
-            <div class="hero-stack">
-              <span class="chip">Django</span>
-              <span class="chip">FastAPI</span>
-              <span class="chip">REST APIs</span>
-              <span class="chip">Automation</span>
-              <span class="chip">Web Scraping</span>
-            </div>
-
-            <div class="hero-links">
-              <a href="mailto:rahuladagale3998@gmail.com">Email</a>
-              <a href="https://www.linkedin.com/in/rahul-adagale/" target="_blank">LinkedIn</a>
-              <a href="https://github.com/Rahul3998" target="_blank">GitHub</a>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- ================= About ================= -->
-    <section id="about" class="section">
-      <div class="container">
-        <header class="section-header" data-aos="fade-up">
-          <p class="section-eyebrow">About</p>
-          <h2>Professional Summary</h2>
-        </header>
-
-        <div class="about-grid">
-          <div class="about-text" data-aos="fade-right">
-            <p>
-              Python Full-Stack Developer with 2+ years of hands-on experience in building,
-              automating, and supporting backend services and full-stack web applications.
-              I specialize in backend engineering, RESTful API development,
-              and automation for real production environments.
-            </p>
-            <p>
-              At Fidel Softech, I work extensively with Django and FastAPI to design
-              secure, scalable APIs. I build Python automation scripts,
-              web scraping solutions for static and JavaScript-driven websites,
-              and Regex-based data processing pipelines.
-            </p>
-            <p>
-              I follow clean coding practices, write modular and maintainable code,
-              and collaborate closely with QA, analysts, and stakeholders
-              in Agile/Scrum environments.
-            </p>
-          </div>
-
-          <div class="skills" data-aos="fade-left">
-            <div class="skills-group">
-              <h3>Backend & APIs</h3>
-              <div class="chip-row">
-                <span class="chip">Python</span>
-                <span class="chip">Django</span>
-                <span class="chip">DRF</span>
-                <span class="chip">FastAPI</span>
-                <span class="chip">REST APIs</span>
-                <span class="chip">JWT Authentication</span>
-              </div>
-            </div>
-
-            <div class="skills-group">
-              <h3>Frontend</h3>
-              <div class="chip-row">
-                <span class="chip">React</span>
-                <span class="chip">JavaScript (ES6+)</span>
-                <span class="chip">HTML</span>
-                <span class="chip">CSS</span>
-                <span class="chip">Bootstrap</span>
-                <span class="chip">Next.js (Basic)</span>
-              </div>
-            </div>
-
-            <div class="skills-group">
-              <h3>Databases</h3>
-              <div class="chip-row">
-                <span class="chip">MySQL</span>
-                <span class="chip">SQLite</span>
-                <span class="chip">MongoDB</span>
-                <span class="chip">Django ORM</span>
-              </div>
-            </div>
-
-            <div class="skills-group">
-              <h3>Automation & Tools</h3>
-              <div class="chip-row">
-                <span class="chip">Python Automation</span>
-                <span class="chip">Regex</span>
-                <span class="chip">Web Scraping</span>
-                <span class="chip">Postman</span>
-                <span class="chip">Git</span>
-                <span class="chip">PyTest (Basic)</span>
-              </div>
-            </div>
-          </div>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="eyebrow reveal">Projects</div>
+    <h2 class="reveal">Things I've Built</h2>
+    <div class="proj-grid reveal-stagger">
+      <div class="proj-card">
+        <div class="proj-num">01 / AI Chat Platform</div>
+        <h3>AI Connect Application</h3>
+        <p>Production-ready AI chat platform supporting both local (Ollama) and cloud-based (OpenAI) LLMs with dynamic model selection, streaming responses, and vision-capable models — backed by a FastAPI + React architecture with secure authentication.</p>
+        <div class="proj-tags">
+          <span>FastAPI</span><span>React</span><span>Ollama</span><span>OpenAI API</span><span>LangChain</span><span>MySQL</span>
         </div>
       </div>
-    </section>
-
-    <!-- ================= Experience ================= -->
-    <section id="experience" class="section">
-      <div class="container">
-        <header class="section-header" data-aos="fade-up">
-          <p class="section-eyebrow">Experience</p>
-          <h2>Professional Experience</h2>
-        </header>
-
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Software Engineer (Python Full-Stack)</h3>
-              <p class="timeline-meta">Fidel Softech Pvt. Ltd., Jan 2024 - Present</p>
-              <ul>
-                <li>Develop backend services and REST APIs using Django and FastAPI.</li>
-                <li>Build Python automation and text-processing pipelines.</li>
-                <li>Implement web scraping for static and JS-driven websites.</li>
-                <li>Use Regex extensively for data cleaning and validation.</li>
-                <li>Perform API testing using Postman and write basic unit tests.</li>
-                <li>Collaborate in Agile/Scrum teams with cross-functional stakeholders.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <h3>Java Developer Intern</h3>
-              <p class="timeline-meta">Fidel Softech Pvt. Ltd., Jul 2023 - Dec 2023</p>
-              <ul>
-                <li>Worked on Java-based development and debugging.</li>
-                <li>Assisted in feature development and bug fixing.</li>
-                <li>Built foundation in backend systems and production workflows.</li>
-              </ul>
-            </div>
-          </article>
+      <div class="proj-card">
+        <div class="proj-num">02 / Multi-Agent RAG</div>
+        <h3>AI Support Agent</h3>
+        <p>Internal AI-powered IT Support Agent built with LangGraph and RAG. Runs a multi-agent workflow that analyzes issues, retrieves context from a vector database, generates responses, and auto-creates support tickets with SMTP notifications.</p>
+        <div class="proj-tags">
+          <span>FastAPI</span><span>LangGraph</span><span>LangChain</span><span>RAG</span><span>Vector DB</span><span>SMTP</span>
         </div>
       </div>
-    </section>
-
-    <!-- ================= Projects ================= -->
-    <section id="projects" class="section">
-      <div class="container">
-        <header class="section-header" data-aos="fade-up">
-          <p class="section-eyebrow">Projects</p>
-          <h2>Key Projects</h2>
-        </header>
-
-        <div class="projects-grid">
-          <article class="card project-card">
-            <div class="card-body">
-              <h3>Website Content Extraction & Translation Platform</h3>
-              <p>
-                FastAPI-based full-stack system for crawling websites,
-                extracting structured content from static and JavaScript-rendered pages,
-                and managing page-wise content review.
-              </p>
-              <p class="project-tech">
-                Tech: Python, FastAPI, React, MySQL, JWT, Selenium
-              </p>
-            </div>
-          </article>
-
-          <article class="card project-card">
-            <div class="card-body">
-              <h3>Secure API-Based Document Processing Platform</h3>
-              <p>
-                Secure backend platform to upload, extract, and process PDF and DOC documents
-                using JWT authentication and structured data storage.
-              </p>
-              <p class="project-tech">
-                Tech: FastAPI, MySQL, React, JWT, Regex
-              </p>
-            </div>
-          </article>
-
-          <article class="card project-card">
-            <div class="card-body">
-              <h3>Django Blog Platform</h3>
-              <p>
-                Full CRUD blog application with authentication,
-                REST APIs, and role-based permissions.
-              </p>
-              <p class="project-tech">
-                Tech: Django, DRF, SQLite, Bootstrap
-              </p>
-              <div class="project-links">
-                <a
-                  href="https://rahul3998.pythonanywhere.com/"
-                  target="_blank"
-                  class="btn small"
-                >
-                  Live Demo
-                </a>
-              </div>
-            </div>
-          </article>
+      <div class="proj-card">
+        <div class="proj-num">03 / Voice Generation</div>
+        <h3>AI Text-to-Speech Application</h3>
+        <p>Web-based text-to-speech platform integrating ElevenLabs and TTSMaker APIs for high-quality speech generation, with a responsive frontend for voice selection, audio generation, and playback.</p>
+        <div class="proj-tags">
+          <span>FastAPI</span><span>React</span><span>ElevenLabs API</span><span>TTSMaker API</span>
         </div>
       </div>
-    </section>
-
-    <!-- ================= Education ================= -->
-    <section id="education" class="section">
-      <div class="container">
-        <header class="section-header">
-          <p class="section-eyebrow">Education</p>
-          <h2>Academic Background</h2>
-        </header>
-
-        <p>
-          <strong>B.Sc. Computer Science</strong><br />
-          Modern College of Arts, Commerce & Science, Pune<br />
-          CGPA: 8.25, 2021 - 2023
-        </p>
-      </div>
-    </section>
-
-    <!-- ================= Contact ================= -->
-    <section id="contact" class="section">
-      <div class="container">
-        <header class="section-header">
-          <p class="section-eyebrow">Contact</p>
-          <h2>Lets Connect</h2>
-        </header>
-
-        <form id="contactForm" class="card contact-form">
-		  <div class="field">
-			<label>Name</label>
-			<input type="text" name="name" required />
-		  </div>
-
-		  <div class="field">
-			<label>Email</label>
-			<input type="email" name="email" required />
-		  </div>
-
-		  <div class="field">
-			<label>Message</label>
-			<textarea name="message" rows="5" required></textarea>
-		  </div>
-
-		  <button type="submit" class="btn primary full-width">
-			Send Message
-		  </button>
-
-		  <p id="formStatus" class="status"></p>
-		</form>
-      </div>
-    </section>
-  </main>
-
-  <!-- ================= Footer ================= -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>@<span id="year"></span> Rahul Adagale</p>
-      <p>Built with HTML, CSS & JavaScript</p>
     </div>
-  </footer>
+  </section>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="script.js"></script>
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="eyebrow reveal">Education</div>
+    <h2 class="reveal">Academic Background</h2>
+    <div class="panel edu-card reveal">
+      <div>
+        <h3>B.Sc. Computer Science</h3>
+        <div class="muted">Modern College of Arts, Commerce &amp; Science, Pune · Jul 2021 – Apr 2023</div>
+      </div>
+      <div class="edu-score">CGPA: 8.25</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="eyebrow reveal">Contact</div>
+    <h2 class="reveal">Let's Connect</h2>
+    <div class="contact-grid">
+      <div class="reveal">
+        <a class="endpoint" href="mailto:rahuladagale3998@gmail.com">
+          <span class="method">GET</span> /email &nbsp;→&nbsp; rahuladagale3998@gmail.com
+        </a>
+        <a class="endpoint" href="tel:+918668460900">
+          <span class="method">GET</span> /phone &nbsp;→&nbsp; +91 8668460900
+        </a>
+        <a class="endpoint" href="https://www.linkedin.com/in/rahul-adagale/" target="_blank" rel="noopener">
+          <span class="method">GET</span> /linkedin &nbsp;→&nbsp; rahul-adagale
+        </a>
+        <a class="endpoint" href="https://github.com/Rahul3998" target="_blank" rel="noopener">
+          <span class="method">GET</span> /github &nbsp;→&nbsp; Rahul3998
+        </a>
+      </div>
+      <form id="contactForm" class="reveal">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Message" required></textarea>
+        <input type="text" name="_honey" style="display:none">
+        <button type="submit" class="btn btn-primary" id="sendBtn">Send Message</button>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <span>© 2026 Rahul Adagale</span>
+  <span>Built with HTML, CSS &amp; JavaScript</span>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  document.querySelectorAll('.navlinks a').forEach(a=>{
+    a.addEventListener('click',()=>{document.querySelector('.navlinks').style.display='';});
+  });
+  const menuBtn=document.querySelector('.menu-btn');
+  const navlinks=document.querySelector('.navlinks');
+  menuBtn.addEventListener('click',()=>{
+    navlinks.style.display = navlinks.style.display==='flex' ? 'none' : 'flex';
+    navlinks.style.flexDirection='column';
+    navlinks.style.position='absolute';
+    navlinks.style.top='60px';
+    navlinks.style.right='28px';
+    navlinks.style.background='var(--panel)';
+    navlinks.style.border='1px solid var(--border)';
+    navlinks.style.padding='16px 22px';
+    navlinks.style.borderRadius='10px';
+  });
+
+  // Scroll-reveal using IntersectionObserver
+  const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15, rootMargin:'0px 0px -60px 0px'});
+  revealEls.forEach(el=>io.observe(el));
+
+  // Terminal typing / line-reveal effect (runs once on load)
+  const lines = document.querySelectorAll('#termBody [data-line]');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduceMotion){
+    lines.forEach(l=>l.classList.add('shown'));
+  } else {
+    lines.forEach((line, i)=>{
+      setTimeout(()=>{ line.classList.add('shown'); }, 500 + i*160);
+    });
+  }
+
+  // Contact form — AJAX submit via FormSubmit (no page reload)
+  const form = document.getElementById('contactForm');
+  const btn = document.getElementById('sendBtn');
+  const status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+
+    // honeypot spam check
+    if(form._honey.value){ return; }
+
+    const original = btn.innerHTML;
+    btn.innerHTML = '<span class="spinner"></span> Sending...';
+    btn.disabled = true;
+    status.className = 'form-status';
+
+    const data = new FormData(form);
+    data.append('_subject', 'New message from portfolio site');
+    data.append('_captcha', 'false');
+    data.append('_template', 'table');
+
+    try{
+      const res = await fetch('https://formsubmit.co/ajax/rahuladagale3998@gmail.com', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: data
+      });
+
+      if(res.ok){
+        status.textContent = "✓ Message sent — I'll get back to you soon.";
+        status.className = 'form-status show ok';
+        form.reset();
+      } else {
+        throw new Error('Request failed');
+      }
+    } catch(err){
+      status.textContent = "✕ Something went wrong. Please email me directly at rahuladagale3998@gmail.com";
+      status.className = 'form-status show err';
+    } finally {
+      btn.innerHTML = original;
+      btn.disabled = false;
+    }
+  });
+</script>
 </body>
 </html>
